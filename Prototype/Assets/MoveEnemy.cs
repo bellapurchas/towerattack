@@ -60,9 +60,21 @@ public class MoveEnemy : MonoBehaviour {
 		sprite.transform.rotation = 
 			Quaternion.AngleAxis(rotationAngle, Vector3.forward);
 
-		/*if (currentWaypoint == 1) {
-			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
-		}*/
+		if (currentWaypoint == 1) {
+			//GameObject.transform.Rotate(0, 180, 0);
+			//transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
+
+		if (currentWaypoint == 3) {
+			//GameObject.transform.Rotate(0, 180, 0);
+			//transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 	}
 
 	public float distanceToGoal() {
