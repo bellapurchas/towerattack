@@ -53,12 +53,16 @@ public class MoveEnemy : MonoBehaviour {
 		//2
 		float x = newDirection.x;
 		float y = newDirection.y;
-		float rotationAngle = Mathf.Atan2 (y, x) * 180 / Mathf.PI;
+		float rotationAngle = Mathf.Atan2 (y, x) * 360 / Mathf.PI;
 		//3
 		GameObject sprite = (GameObject)
 			gameObject.transform.FindChild("Sprite").gameObject;
 		sprite.transform.rotation = 
 			Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+
+		/*if (currentWaypoint == 1) {
+			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+		}*/
 	}
 
 	public float distanceToGoal() {
