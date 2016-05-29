@@ -61,16 +61,21 @@ public class MoveEnemy : MonoBehaviour {
 			Quaternion.AngleAxis(rotationAngle, Vector3.forward);
 
 		if (currentWaypoint == 1) {
-			//GameObject.transform.Rotate(0, 180, 0);
-			//transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+			sprite.transform.Rotate (0, 0, 90);
+			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+		}
+		if (currentWaypoint == 2) {
 			Vector3 theScale = transform.localScale;
 			theScale.x *= -1;
 			transform.localScale = theScale;
 		}
 
 		if (currentWaypoint == 3) {
-			//GameObject.transform.Rotate(0, 180, 0);
-			//transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+			sprite.transform.Rotate (0, 0, 90);
+			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+		}
+
+		if (currentWaypoint == 4) {
 			Vector3 theScale = transform.localScale;
 			theScale.x *= -1;
 			transform.localScale = theScale;
