@@ -27,6 +27,14 @@ public class SpawnEnemy : MonoBehaviour {
 		gameManager =
 			GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
 	}
+
+    public void generateEnemy() {
+        int currentWave = gameManager.Wave;
+        GameObject newEnemy = (GameObject)
+                    Instantiate(waves[1].enemyPrefab);
+        newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
