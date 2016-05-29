@@ -28,13 +28,45 @@ public class SpawnEnemy : MonoBehaviour {
 			GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
 	}
 
-    public void generateEnemy() {
-        int currentWave = gameManager.Wave;
-        GameObject newEnemy = (GameObject)
-                    Instantiate(waves[1].enemyPrefab);
-        newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+	public void generateEnemy1() {
+		int currentWave = gameManager.Wave;
+		GameObject newEnemy = (GameObject)
+			Instantiate(waves[0].enemyPrefab);
+		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
 
-    }
+	}
+
+	public void generateEnemy2() {
+		int currentWave = gameManager.Wave;
+		GameObject newEnemy = (GameObject)
+			Instantiate(waves[1].enemyPrefab);
+		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+	}
+
+	public void generateEnemy3() {
+		int currentWave = gameManager.Wave;
+		GameObject newEnemy = (GameObject)
+			Instantiate(waves[2].enemyPrefab);
+		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+	}
+
+	public void generateEnemy4() {
+		int currentWave = gameManager.Wave;
+		GameObject newEnemy = (GameObject)
+			Instantiate(waves[3].enemyPrefab);
+		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+	}
+
+	public void generateEnemy5() {
+		int currentWave = gameManager.Wave;
+		GameObject newEnemy = (GameObject)
+			Instantiate(waves[4].enemyPrefab);
+		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+	}
 	
 	// Update is called once per frame
 	void Update () {
