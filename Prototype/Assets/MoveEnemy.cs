@@ -59,10 +59,12 @@ public class MoveEnemy : MonoBehaviour {
 			gameObject.transform.FindChild("Sprite").gameObject;
 		sprite.transform.rotation = 
 			Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+		
 
 		if (currentWaypoint == 1) {
 			sprite.transform.Rotate (0, 0, 90);
 			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y);
+
 		}
 		if (currentWaypoint == 2) {
 			Vector3 theScale = transform.localScale;
