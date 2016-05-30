@@ -43,6 +43,7 @@ public class GameManagerBehavior : MonoBehaviour {
 			// 1
 			if (value < health) {
 				Camera.main.GetComponent<CameraShake>().Shake();
+				Gold += 200;
 			}
 			// 2
 			health = value;

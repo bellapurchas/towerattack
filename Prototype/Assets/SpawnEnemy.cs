@@ -6,6 +6,7 @@ public class Wave {
 	public GameObject enemyPrefab;
 	public float spawnInterval = 2;
 	public int maxEnemies = 20;
+	public int cost;
 }
 
 public class SpawnEnemy : MonoBehaviour {
@@ -15,6 +16,7 @@ public class SpawnEnemy : MonoBehaviour {
 
 	public Wave[] waves;
 	public int timeBetweenWaves = 5;
+
 	
 	private GameManagerBehavior gameManager;
 	
@@ -28,50 +30,12 @@ public class SpawnEnemy : MonoBehaviour {
 			GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
 	}
 
-	public void generateEnemy1() {
-		int currentWave = gameManager.Wave;
-		GameObject newEnemy = (GameObject)
-			Instantiate(waves[0].enemyPrefab);
-		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-
-	}
-
-	public void generateEnemy2() {
-		int currentWave = gameManager.Wave;
-		GameObject newEnemy = (GameObject)
-			Instantiate(waves[1].enemyPrefab);
-		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-
-	}
-
-	public void generateEnemy3() {
-		int currentWave = gameManager.Wave;
-		GameObject newEnemy = (GameObject)
-			Instantiate(waves[2].enemyPrefab);
-		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-
-	}
-
-	public void generateEnemy4() {
-		int currentWave = gameManager.Wave;
-		GameObject newEnemy = (GameObject)
-			Instantiate(waves[3].enemyPrefab);
-		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-
-	}
-
-	public void generateEnemy5() {
-		int currentWave = gameManager.Wave;
-		GameObject newEnemy = (GameObject)
-			Instantiate(waves[4].enemyPrefab);
-		newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-
-	}
-	
+		
 	// Update is called once per frame
 	void Update () {
 		// 1
 		int currentWave = gameManager.Wave;
+		float cost;
 		if (currentWave < waves.Length) {
 			// 2
 			float timeInterval = Time.time - lastSpawnTime;
@@ -101,4 +65,59 @@ public class SpawnEnemy : MonoBehaviour {
 			gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
 		}	
 	}
+	public void generateEnemy1() {
+		int currentWave = gameManager.Wave;
+		if (gameManager.Gold >= (waves[0].cost)) {
+			GameObject newEnemy = (GameObject)
+				Instantiate(waves[0].enemyPrefab);
+			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+			gameManager.Gold -= (waves[0].cost);
+		}
+
+	}
+
+	public void generateEnemy2() {
+		int currentWave = gameManager.Wave;
+		if (gameManager.Gold >= (waves[1].cost)) {
+			GameObject newEnemy = (GameObject)
+				Instantiate(waves[1].enemyPrefab);
+			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+			gameManager.Gold -= (waves[1].cost);
+		}
+	}
+
+	public void generateEnemy3() {
+		int currentWave = gameManager.Wave;
+		if (gameManager.Gold >= (waves[2].cost)) {
+			GameObject newEnemy = (GameObject)
+				Instantiate(waves[2].enemyPrefab);
+			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+			gameManager.Gold -= 200;
+			gameManager.Gold -= (waves[2].cost);
+		}
+
+	}
+
+	public void generateEnemy4() {
+		int currentWave = gameManager.Wave;
+		if (gameManager.Gold >= (waves[3].cost)) {
+			GameObject newEnemy = (GameObject)
+				Instantiate(waves[3].enemyPrefab);
+			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+			gameManager.Gold -= (waves[3].cost);
+		}
+
+	}
+
+	public void generateEnemy5() {
+		int currentWave = gameManager.Wave;
+		if (gameManager.Gold >= (waves[4].cost)) {
+			GameObject newEnemy = (GameObject)
+				Instantiate(waves[4].enemyPrefab);
+			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+			gameManager.Gold -= (waves[4].cost);
+		}
+
+	}
+
 }
