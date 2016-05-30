@@ -92,7 +92,6 @@ public class SpawnEnemy : MonoBehaviour {
 			GameObject newEnemy = (GameObject)
 				Instantiate(waves[2].enemyPrefab);
 			newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-			gameManager.Gold -= 200;
 			gameManager.Gold -= (waves[2].cost);
 		}
 
