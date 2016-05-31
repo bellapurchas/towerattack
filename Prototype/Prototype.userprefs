@@ -2,8 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GameManagerBehavior.cs">
     <Files>
-      <File FileName="Assets/MoveEnemy.cs" Line="56" Column="49" />
-      <File FileName="Assets/GameManagerBehavior.cs" Line="60" Column="1" />
+      <File FileName="Assets/MoveEnemy.cs" Line="19" Column="1" />
+      <File FileName="Assets/GameManagerBehavior.cs" Line="55" Column="1" />
+      <File FileName="Assets/SpawnEnemy.cs" Line="37" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
