@@ -10,7 +10,7 @@ public class GameManagerBehavior : MonoBehaviour {
   		get { return gold; }
   		set {
 			gold = value;
-    		goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+    		goldLabel.GetComponent<Text>().text = gold + "x";
 		}
 	}
 
@@ -47,7 +47,7 @@ public class GameManagerBehavior : MonoBehaviour {
 			}
 			// 2
 			health = value;
-			healthLabel.text = "HEALTH: " + health;
+			healthLabel.text = health + "x";
 			// 2
 			if (health <= 0 && !gameOver) {
 				gameOver = true;
