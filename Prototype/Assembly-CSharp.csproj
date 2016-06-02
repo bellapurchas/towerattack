@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BulletBehavior.cs" />
+     <Compile Include="Assets\Disable.cs" />
      <Compile Include="Assets\EnemyDestructionDelegate.cs" />
      <Compile Include="Assets\GameManagerBehavior.cs" />
      <Compile Include="Assets\HealthBar.cs" />

@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class GameManagerBehavior : MonoBehaviour {
 
+
 	public Text goldLabel;
 	private int gold;
 	public int Gold {
