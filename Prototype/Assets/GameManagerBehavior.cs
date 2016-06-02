@@ -29,7 +29,6 @@ public class GameManagerBehavior : MonoBehaviour {
 					nextWaveLabels[i].GetComponent<Animator>().SetTrigger("nextWave");
 				}
 			}
-			waveLabel.text = "WAVE: " + (wave + 1);
 		}
 	}
 
