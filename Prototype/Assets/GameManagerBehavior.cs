@@ -4,13 +4,14 @@ using UnityEngine.UI;
 
 public class GameManagerBehavior : MonoBehaviour {
 
+
 	public Text goldLabel;
 	private int gold;
 	public int Gold {
   		get { return gold; }
   		set {
 			gold = value;
-    		goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+    		goldLabel.GetComponent<Text>().text = gold + "x";
 		}
 	}
 
@@ -29,7 +30,6 @@ public class GameManagerBehavior : MonoBehaviour {
 					nextWaveLabels[i].GetComponent<Animator>().SetTrigger("nextWave");
 				}
 			}
-			waveLabel.text = "WAVE: " + (wave + 1);
 		}
 	}
 
@@ -47,7 +47,7 @@ public class GameManagerBehavior : MonoBehaviour {
 			}
 			// 2
 			health = value;
-			healthLabel.text = "HEALTH: " + health;
+			healthLabel.text = health + "x";
 			// 2
 			if (health <= 0 && !gameOver) {
 				gameOver = true;
