@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerBehavior : MonoBehaviour {
 
@@ -71,9 +72,14 @@ public class GameManagerBehavior : MonoBehaviour {
 		Wave = 0;
 		Health = 5;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void NextLevel() {
+		if (gameOver) {
+			int currentSceneIndex = SceneManager.GetActiveScene ().buildIndex; 
+			if (currentSceneIndex < SceneManager.sceneCount - 1) {
+				SceneManager.LoadScene (currentSceneIndex + 1);
+			}
+		}
 	}
+	// Update is called once per frame
 }

@@ -27,6 +27,16 @@ public class sceneManager : MonoBehaviour {
 	public void level5(){
 		SceneManager.LoadScene ("Level 5");
 	}
+
+	public void Tutorial(){
+		SceneManager.LoadScene ("Tutorial");
+	}
+
+	public void Home(){
+		SceneManager.LoadScene ("Start Screen");
+	}
+
+
 		
 
 	
