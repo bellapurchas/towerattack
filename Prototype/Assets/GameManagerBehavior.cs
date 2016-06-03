@@ -82,4 +82,11 @@ public class GameManagerBehavior : MonoBehaviour {
 		}
 	}
 	// Update is called once per frame
+
+	public void endGameAndRestartLevel() {
+		if (GameObject.FindGameObjectWithTag("Enemy") == null && gold <= 99){
+			int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+			SceneManager.LoadScene(currentSceneIndex + 1);
+		}
+	}
 }
