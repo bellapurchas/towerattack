@@ -20,6 +20,7 @@ public class GameManagerBehavior : MonoBehaviour {
 	public GameObject[] nextWaveLabels;
 
 	public bool gameOver = false;
+	public bool gameWon = false;
 
 	private int wave;
 	public int Wave {
@@ -84,9 +85,12 @@ public class GameManagerBehavior : MonoBehaviour {
 	// Update is called once per frame
 
 	public void endGameAndRestartLevel() {
-		if (GameObject.FindGameObjectWithTag("Enemy") == null && gold <= 99){
-			int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-			SceneManager.LoadScene(currentSceneIndex + 1);
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy") as GameObject[];
+		int enemyCount = enemies.Length;
+		if (enemyCount <= 0 && gold <= 99 && !gameOver) {
+			gameWon = true;
+			GameObject gameWonText = GameObject.FindGameObjectWithTag ("GameWon");
+			gameWonText.GetComponent<Animator> ().SetBool ("gameWon", true);
 		}
 	}
 }
